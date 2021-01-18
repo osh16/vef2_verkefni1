@@ -1,0 +1,23 @@
+{
+  "name": "vef2_verkefni1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "browser-sync": "browser-sync start --server --files index.html styles.css",
+    "sass": "node-sass styles.scss styles.css -w",
+    "dev": "concurrently npm:browser-sync npm:sass",
+    "lint": "stylelint styles.scss --syntax scss"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "fs": "0.0.1-security",
+    "stylelint": "^13.8.0",
+    "stylelint-config-primer": "^9.3.3"
+  }
+}
