@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="is">
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <h1><%= title %></h1>
+	<!-- <%- include('header') -%> -->
+	<% for (var i = 0; i < videos.length; i++) { %>
+	<ul>
+		<li><%- videos[i].id %></li>
+		<li><%- videos[i].title %></li>
+		<li><%- videos[i].description %></li>
+		<li><%- videos[i].created %></li>
+		<li><%- videos[i].duration %></li>
+		<img src=<%- videos[i].poster %>/>
+		<li><%- videos[i].video %></li>
+	</ul>
+	<% } %>
+	<!-- <%- include('footer') -%> -->
+
+  </body>
+</html>

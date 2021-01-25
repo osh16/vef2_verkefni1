@@ -6,12 +6,15 @@
   "scripts": {
     "browser-sync": "browser-sync start --server --files index.html styles.css",
     "sass": "node-sass styles.scss styles.css -w",
-    "dev": "concurrently npm:browser-sync npm:sass",
+    "__dev__": "concurrently npm:browser-sync npm:sass",
+    "dev": "nodemon app.js",
     "lint": "stylelint styles.scss --syntax scss"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
     "node-sass": "^5.0.0"
   },
   "devDependencies": {
