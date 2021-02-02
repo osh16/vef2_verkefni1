@@ -8,19 +8,20 @@
 
   <body>
     <h1><%= title %></h1>
-	<!-- <%- include('header') -%> -->
-	<% for (var i = 0; i < videos.length; i++) { %>
-	<ul>
-		<li><%- videos[i].id %></li>
-		<li><%- videos[i].title %></li>
-		<li><%- videos[i].description %></li>
-		<li><%- videos[i].created %></li>
-		<li><%- videos[i].duration %></li>
-		<img src=<%- videos[i].poster %>/>
-		<li><%- videos[i].video %></li>
-	</ul>
+	<div id="categories">
+	<% for (var i = 0; i < categories.length; i++) { %>
+		<div id="category">
+			<h2><%- categories[i].title %></h2>
+			<% for (var j = 0; j < categories[i].videos.length; j++) { %>
+				<div id="video">
+					<img src="<%- videos[j].poster %>"/>
+					<p><%= locals.time.duration(videos[j].duration) %></p>
+					<p><%= locals.time.age(videos[j].created) %></p>
+					<h3><%- videos[j].title %></h3>
+				</div>
+			<% } %>
+		</div>
 	<% } %>
-	<!-- <%- include('footer') -%> -->
-
+	</div>
   </body>
 </html>
