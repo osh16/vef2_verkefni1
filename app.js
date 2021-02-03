@@ -11,6 +11,7 @@ app.locals.time = require('./src/time');
 app.locals.teitur = "HELLO TEITUR";
 
 app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname, '/node_modules/bootstrap/dist/css')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
