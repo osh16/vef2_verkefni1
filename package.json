@@ -7,8 +7,10 @@
     "browser-sync": "browser-sync start --server --files index.html ./src/styles.scss",
     "sass": "node-sass --source-map-embed ./src/styles.scss ./public/styles.css",
     "sass-watch": "node-sass --source-map-embed --watch --recursive src/styles.scss ./public/styles.css",
-    "lint": "stylelint styles.scss --syntax scss",
+    "lint": "stylelint ./src/*.scss --syntax scss",
+    "eslint": "eslint app.js ./src/*.js --fix",
     "nodemon": "nodemon app.js",
+    "test": "concurrently npm:lint npm:eslint",
     "dev": "concurrently npm:nodemon npm:sass npm:sass-watch"
   },
   "author": "",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
+    "eslint": "^7.19.0",
     "fs": "0.0.1-security",
     "stylelint": "^13.8.0",
     "stylelint-config-primer": "^9.3.3"

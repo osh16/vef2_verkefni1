@@ -1,12 +1,16 @@
 <%- include('header') -%>
 	<div class="container">
-		<h1 class="title"><%= video.title %></h1>
+		<h2 class="title"><%= video.title %></h2>
 		<!-- myndbandid -->
-		<div class="player row">
-			<video><source src="<%= video.video %>" type="video/mp4"/></video>
+		<div class="player">
+			<div class="row justify-content-center">
+				<video controls><source src="<%= video.video %>" type="video/mp4"/></video>
+			</div>
+			<p class="player__description row justify-content-center" ><%= video.description %></p>
 		</div>
 
 		<!-- related -->
+		<h2>Tengd myndbönd</h2>
 		<div class="row">
 			<% for (var i = 0; i < video.related.length; i++) { 
 			   var related = video.related[i];

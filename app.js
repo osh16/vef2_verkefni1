@@ -36,7 +36,10 @@ app.get('/:id', (req,res) => {
 			}
 		}
 		if (!ret) {
-			// not found
+			res.status(404).render('error', {
+				title:"Síða fannst ekki",
+				message:"Síða fannst ekki"
+			});
 		} else {
 			console.log(ret);
 			res.render('video', {
