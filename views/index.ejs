@@ -1,27 +1,17 @@
-<!doctype html>
-<html lang="is">
-  <head>
-    <meta charset="utf-8">
-    <title><%= title %></title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-
-  <body>
-    <h1><%= title %></h1>
+<%- include('header') -%>
 	<div id="categories">
-	<% for (var i = 0; i < categories.length; i++) { %>
-		<div id="category">
-			<h2><%- categories[i].title %></h2>
-			<% for (var j = 0; j < categories[i].videos.length; j++) { %>
-				<div id="video">
-					<img src="<%- videos[j].poster %>"/>
-					<p><%= locals.time.duration(videos[j].duration) %></p>
-					<p><%= locals.time.age(videos[j].created) %></p>
-					<h3><%- videos[j].title %></h3>
-				</div>
-			<% } %>
-		</div>
-	<% } %>
+		<% for (var i = 0; i < categories.length; i++) { %>
+			<div class="category">
+				<h2><%- categories[i].title %></h2>
+				<% for (var j = 0; j < categories[i].videos.length; j++) { %>
+					<a class="video" href="/<%=videos[j].id %>">
+						<img src="<%- videos[j].poster %>"></img>
+						<div class="timestamp"><%= locals.time.duration(videos[j].duration) %></div>
+						<p><%= locals.time.age(videos[j].created) %></p>
+						<h3><%- videos[j].title %></h3>
+					</a>
+				<% } %>
+			</div>
+		<% } %>
 	</div>
-  </body>
-</html>
+<%- include('footer') -%>
