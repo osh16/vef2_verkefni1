@@ -1,0 +1,29 @@
+<%- include('header') -%>
+	<div class="container">
+		<h1 class="title"><%= video.title %></h1>
+		<!-- myndbandid -->
+		<div class="player row">
+			<video><source src="<%= video.video %>" type="video/mp4"/></video>
+		</div>
+
+		<!-- related -->
+		<div class="row">
+			<% for (var i = 0; i < video.related.length; i++) { 
+			   var related = video.related[i];
+			%>
+			<div class="video col-sm-4">
+				<a href="/<%=videos[related].id %>">
+					<div class="video__poster">
+						<img src="<%- videos[related].poster %>"></img>
+						<div class="video__poster__timestamp"><%= locals.time.duration(videos[related].duration) %></div>
+					</div>
+					<div class="video__info">
+						<h3><%- videos[related].title %></h3>
+						<div class="video__info__age"><%= locals.time.age(videos[related].created) %></div>
+					</div>
+				</a>
+			</div> <!-- col end -->
+			<% } %>
+		</div>
+	</div> <!-- container end -->
+<%- include('footer') -%>

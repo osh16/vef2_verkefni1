@@ -2,38 +2,40 @@
 
 }
 
+.fancy-line {
+	width: 75%;
+	border-top: 1px solid black;
+}
+
 .video {
-	margin-bottom: 5%;
-}
+	&__poster {
+		img {
+			width: 100%;
+			height: 100%;
+		}
+		
+		&__timestamp {
+			background-color: rgba(0,0,0,0.5);
+			color: black;
+		}
+	}
 
-.video_poster {
-	img {
+	&__info {
+		h3 {
+			margin-bottom:0;
+		}
+
+		color: black;
 		width: 100%;
 		height: 100%;
 	}
-	.timestamp {
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0,0,0,0.5);
+
+	a:hover {
+		text-decoration: none;
 	}
-	
 }
 
-.video_info {
-	h3 {
-		margin-bottom:0;
-	}
-	
-	color: black;
-	width: 100%;
-	height: 100%;
+.player {
+	margin-left: auto;
+	margin-right: auto;
 }
-
-.timestamp {
-	background-color:rgba(0,0,0,0.5);
-	color:white;
-}
-
-
-
-

@@ -1,23 +1,25 @@
 <%- include('header') -%>
 	<div class="container">
+		<h1 class="title"><%= title %></h1>
 		<% for (var i = 0; i < categories.length; i++) { %>
 			<h2><%- categories[i].title %></h2>
 			<div class="row">
 				<% for (var j = 0; j < categories[i].videos.length; j++) { %>
 					<div class="video col-sm-4">
 						<a href="/<%=videos[j].id %>">
-							<div class="video_poster">
+							<div class="video__poster">
 								<img src="<%- videos[j].poster %>"></img>
-								<div class="timestamp"><%= locals.time.duration(videos[j].duration) %></div>
+								<div class="video__poster__timestamp"><%= locals.time.duration(videos[j].duration) %></div>
 							</div>
-							<div class="video_info">
+							<div class="video__info">
 								<h3><%- videos[j].title %></h3>
-								<div class="age"><%= locals.time.age(videos[j].created) %></div>
+								<div class="video__info__age"><%= locals.time.age(videos[j].created) %></div>
 							</div>
 						</a>
 					</div> <!-- col end -->
 				<% } %>
 			</div> <!-- row end -->
+			<hr class="fancy-line"/>
 		<% } %>
 	</div> <!-- container end -->
 <%- include('footer') -%>
